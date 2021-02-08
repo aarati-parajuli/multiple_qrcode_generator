@@ -1,6 +1,10 @@
 import qrcode
+import json
+#data={'dalle':'https://dalle.com.np/', 'daddys':'https://daddys-kitchen-the-cafe-and-restaurant.business.site/'}
 
-data={'dalle':'https://dalle.com.np/', 'daddys':'https://daddys-kitchen-the-cafe-and-restaurant.business.site/'}
+with open('data.txt') as json_file:
+    data = json.load(json_file)
+
 for keys in data:
         qr = qrcode.QRCode(
                 version=1,
