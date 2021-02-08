@@ -4,7 +4,7 @@ import json
 
 with open('data.txt') as json_file:
     data = json.load(json_file)
-
+save_path=r'C:\Users\Aarati\Documents\GitHub\multiple_qrcode_generator\media/'
 for keys in data:
         qr = qrcode.QRCode(
                 version=1,
@@ -15,4 +15,7 @@ for keys in data:
         qr.add_data(data[keys])
         qr.make(fit=True)
         img = qr.make_image(fill_color='red', back_color='white')
-        img.save('qr'+keys+'.png')
+        name = save_path + 'qr'+keys + '.png'
+        img.save(save_path+'qr'+keys+'.png')
+        #file1 = open(name, "w")
+        #file1.write(name)
